@@ -15,6 +15,7 @@ RUN sed 's/#$ModLoad imudp/$ModLoad imudp/' -i /etc/rsyslog.conf
 RUN sed 's/#$UDPServerRun 514/$UDPServerRun 514/' -i /etc/rsyslog.conf
 RUN sed 's/#$ModLoad imtcp/$ModLoad imtcp/' -i /etc/rsyslog.conf
 RUN sed 's/#$InputTCPServerRun 514/$InputTCPServerRun 514/' -i /etc/rsyslog.conf
+RUN sed 's,/var/log,/data/var/log,g' -i /etc/rsyslog.d/50-default.conf
 
 EXPOSE 514/tcp 514/udp
 
